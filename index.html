@@ -4,379 +4,529 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio</title>
+  <title>Jasenko Božinović | Frontend Developer</title>
+  <meta name="description" content="Jasenko Božinović — Frontend Developer from Sarajevo specializing in React, JavaScript, and modern web technologies." />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     referrerpolicy="no-referrer" crossorigin="anonymous" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,700;1,300;1,400;1,700&family=Merienda:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
-  <!-- Animate CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZHWWQLW9V"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RZHWWQLW9V');
 </script>
-<body id="home" class="light">
 
-  <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-  <style>
-    /* Scroll to top button */
-    #scrollToTopBtn {
-      display: none;
-      position: sticky;
-      top: 300px;
-      z-index: 99;
-      border: none;
-      outline: none;
-      background-color: #00a8ff;
-      color: white;
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 10px;
-    }
+<body>
 
-    #scrollToTopBtn:hover {
-      background-color: #555;
-    }
-  </style>
-  <script>
-    window.onscroll = function () {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "flex";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
-    }
-
-    //ease out function
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-
-    document.getElementById("scrollToTopBtn").addEventListener("click", scrollToTop);
-
-  </script>
-
-  <nav class="navbar navbar-expand-lg navbar-light mb-3" id="navbar">
-    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fas fa-bars animate__animated animate__pulse"></i></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-        </li>
-        <li class="nav-item" id="cv-icon">
-          <a href="./cv.html" class="nav-link"><i class="fas fa-file"></i> Resume</a>
-        </li>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">JB<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="./cv.html" class="nav-link nav-cta">Resume</a></li>
       </ul>
     </div>
   </nav>
 
-
-  <section class="hero-section">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
     <div class="container">
-      <h1 id="name-heading" class="hero-text">
-        My name is Jasenko Božinović
-      </h1>
-      <div class="row">
-        <div class="hero-img col-md-6">
-          <img src="./img/profilna.jpg" class="img-fluid" alt="Profile Picture" />
+      <div class="hero-content">
+        <div class="hero-image-wrapper" data-aos="fade-right">
+          <div class="hero-image">
+            <img src="./img/profilna.jpg" alt="Jasenko Božinović" />
+          </div>
         </div>
-        <div class="col-md-6">
-          <p>I am a Front-end Web Developer. I work with:</p>
-          <ul class="list-unstyled technologies">
-            <li>
-              <i class="fab fa-html5 animate__animated animate__wobble"></i>
-              HTML
-            </li>
-            <li>
-              <i class="fab fa-bootstrap animate__wobble"></i> Bootstrap
-            </li>
-            <li>
-              <i class="fab fa-css3-alt animate__wobble"></i> CSS / Animate CSS
-            </li>
-            <li>
-              <i class="fab fa-sass animate__wobble"></i> SCSS
-            </li>
-            <li><i class="fab fa-js animate__wobble"></i> JavaScript</li>
-
-
-            <li><i class="fab fa-node-js animate__wobble"></i> Node JS</li>
-            <li><i class="fab fa-react animate__wobble"></i> React</li>
-
-            <li>
-              <i class="fas fa-database animate__wobble"></i> SQL / MySql DB
-            </li>
-            <li><i class="fab fa-figma animate__wobble"></i> Figma</li>
-            <li><i class="fab fa-git animate__wobble"></i> Git</li>
-          </ul>
+        <div class="hero-text" data-aos="fade-left">
+          <span class="hero-greeting">👋 Hello, I'm</span>
+          <h1 class="hero-name">Jasenko <span class="gradient-text">Božinović</span></h1>
+          <div class="hero-role">
+            <span>I'm a </span><span id="typed-text"></span>
+          </div>
+          <p class="hero-bio">
+            Frontend Developer crafting modern, fast, and user-friendly web experiences from Sarajevo, Bosnia &amp; Herzegovina.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/AlfaGongGong" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.facebook.com/Sinner211?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="mailto:jasenkobozinovic@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
         </div>
-        <div class="col-md-12 text-center mt-4">
-          <a href="#contact" class="btn btn-primary scrollto">Contact me</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#about" aria-label="Scroll down">
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Get To Know Me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <h3>Frontend Developer &amp; Healthcare Professional</h3>
+          <p>
+            I am a <strong>Frontend Developer</strong> from Sarajevo, Bosnia and Herzegovina, driven by a passion for creating beautiful and functional web experiences.
+          </p>
+          <p>
+            Prior to transitioning into tech, I spent <strong>22 years as a physiotherapist</strong>, which gave me exceptional attention to detail, strong communication skills, and the ability to work effectively under pressure — both independently and as a team member.
+          </p>
+          <p>
+            I gained hands-on development experience at IT Academy Sarajevo, and I am committed to building <strong>high-quality, responsive, accessible</strong> websites that delight users and achieve business goals.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">22</span>
+              <span class="stat-label">Years Work Ethic</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Curiosity</span>
+            </div>
+          </div>
+          <a href="./cv.html" class="btn btn-primary">View Resume <i class="fas fa-file-alt"></i></a>
+        </div>
+        <div class="about-details" data-aos="fade-left">
+          <div class="detail-card">
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Sarajevo, Bosnia &amp; Herzegovina</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <span class="detail-label">Status</span>
+                <span class="detail-value available">Available for work</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <span class="detail-label">Education</span>
+                <span class="detail-value">IT Academy Sarajevo</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-language"></i>
+              <div>
+                <span class="detail-label">Languages</span>
+                <span class="detail-value">Bosnian (Native) · English (Fluent)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Hero -->
 
-  <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 content">
-            <h2>About me</h2>
-            <p>
-              I am <strong>Frontend Developer</strong> from Sarajevo, Bosnia and
-              Herzegovina. <br />Prior to pursuing a career in web development,
-              I've been working as a physiotherapist in a hospital setting for
-              22 years, and developed a strong work ethic, excellent
-              communication skills, and the ability to work under pressure while
-              maintaining attention to detail, as an individual, but also as a
-              team member. <br />My passion for website development and
-              programming has grown while attending IT Academy in Sarajevo,
-              where I gained valuable hands-on experience using
-              industry-standard tools and techniques. I am eager to learn more
-              and continue to improve my skills as I embark on this exciting new
-              career path. <br />As a developer, I am committed to creating
-              high-quality, user-friendly, responsive, and aesthetically
-              pleasing websites that provide the best possible experience for
-              the end user. I am a responsible and reliable individual who takes
-              pride in delivering work that exceeds expectations for the
-              contribution to your project.
-            </p>
-          </div>
+  <!-- Skills Section -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I Work With</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-card">
+          <i class="fab fa-html5 skill-icon html"></i>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt skill-icon css"></i>
+          <span>CSS3 / SCSS</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js skill-icon js"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-react skill-icon react"></i>
+          <span>React</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-node-js skill-icon node"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-bootstrap skill-icon bootstrap"></i>
+          <span>Bootstrap</span>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-database skill-icon db"></i>
+          <span>SQL / MySQL</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-git-alt skill-icon git"></i>
+          <span>Git</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-figma skill-icon figma"></i>
+          <span>Figma</span>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-mobile-alt skill-icon responsive"></i>
+          <span>Responsive Design</span>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-universal-access skill-icon a11y"></i>
+          <span>Accessibility</span>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-code skill-icon rest"></i>
+          <span>REST APIs</span>
         </div>
       </div>
-    </section>
-    <!-- End About Section -->
+    </div>
+  </section>
 
-  </main>
-  <!-- End #main -->
-
-  <section class="section" id="projects">
+  <!-- Projects Section -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2>Some of my projects</h2>
-      <div class="row">
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Black Flag Project" src="img/blackFlag.png" />
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img">
+            <img src="img/blackFlag.png" alt="Black Flag — Webstore for Games" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/Black-Flag" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
             <h3>Black Flag</h3>
-            <p>Webstore for games</p>
-            <a href="https://alfagonggong.github.io/Black-Flag" class="btn btn-primary project-btn">View Project</a>
+            <p>Webstore for games with modern UI and smooth browsing experience.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Under Construction" src="img/ado.png" />
-            <h3>Passenger Transport Webpage</h3>
-            <p>Webpage of a Passenger Transport Company. </p>
-            <a href="https://alfagonggong.github.io/ado/" class="btn btn-primary project-btn">View Project</a>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <img src="img/ado.png" alt="Passenger Transport Webpage" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/ado/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Passenger Transport</h3>
+            <p>Website for a passenger transport company with route information and scheduling.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Swimming Clubn" src="img/swim-logo.jpg" />
-            <h3>Webpage for a swimming club Swim</h3>
-            <p>Static webpage created in HTML / SCSS and JavaScript</p>
-            <a href="https://sportskiklubswim.ba/" class="btn btn-primary project-btn">View
-              Project</a>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <img src="img/swim-logo.jpg" alt="Swimming Club Swim" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://sportskiklubswim.ba/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Swimming Club Swim</h3>
+            <p>Live production website for a local swimming club, enhancing their online presence.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>SCSS</span><span>JavaScript</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Connect 4" src="img/connect4.png" />
-            <h3>Connect 4</h3>
-            <p>Connect 4 game</p>
-            <a href="https://alfagonggong.github.io/Connect-4-web-app" class="btn btn-primary project-btn">View
-              Project</a>
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img">
+            <img src="img/linker-praksa.png" alt="Linker — React App" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://development--ita-linker.netlify.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Credit Card" src="img/creditcard.png" />
-            <h3>Credit Card</h3>
-            <p>Credit Card fill form</p>
-            <a href="https://alfagonggong.github.io/simple-credit-card-not-responsive"
-              class="btn btn-primary project-btn">View Project</a>
-          </div>
-        </div>
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Digital Clock" src="img/digital-clock.png" />
-            <h3>Digital Clock</h3>
-            <p>Digital Clock from scratch vanilla JS exscercise</p>
-            <a href="https://alfagonggong.github.io/digitalClock/" class="btn btn-primary project-btn">View
-              Project</a>
-          </div>
-        </div>
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="memory-game" src="img/memory.png" />
-            <h3>Memory Game</h3>
-            <p>Web app done in HTML, CSS and JavaScript</p>
-            <a href="https://alfagonggong.github.io/memory-game" class="btn btn-primary project-btn">View Project</a>
-          </div>
-        </div>
-
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Solar System" src="img/solar-system.png" />
-            <h3>3D Solar System</h3>
-            <p>HTML, CSS and vanilla JavaScript exscercise</p>
-            <a href="https://alfagonggong.github.io/solar-system/" class="btn btn-primary project-btn">View
-              Project</a>
-          </div>
-        </div>
-
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Drawing App" src="img/drawing-app.png" />
-            <h3>Drawing app</h3>
-            <p>Drawing app that resembles Paint in MS Windows</p>
-            <a href="https://alfagonggong.github.io/simple-draw-app/" class="btn btn-primary project-btn">View
-              Project</a>
-          </div>
-        </div>
-
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Linker" src="img/linker-praksa.png" />
+          <div class="project-info">
             <h3>Linker</h3>
-            <p>A project in React in which I collaborated with colleagues from my class during a practice/internship
-              program with IT Academy Sarajevo.</p>
-            <a href="https://development--ita-linker.netlify.app/" class="btn btn-primary project-btn">View
-              Project</a>
+            <p>Collaborative React project built during IT Academy Sarajevo internship program.</p>
+            <div class="project-tags">
+              <span>React</span><span>JavaScript</span><span>CSS</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4 section">
-          <div class="card project">
-            <img alt="Under Construction" src="img/barrier_2334265 (1).png" />
-            <h3>Under Construction</h3>
-            <p>More projects coming soon</p>
-
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <img src="img/solar-system.png" alt="3D Solar System" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/solar-system/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
           </div>
+          <div class="project-info">
+            <h3>3D Solar System</h3>
+            <p>Interactive 3D solar system simulation using pure HTML, CSS and JavaScript.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <img src="img/memory.png" alt="Memory Game" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/memory-game" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Memory Game</h3>
+            <p>Classic card memory matching game built with HTML, CSS, and JavaScript.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img">
+            <img src="img/drawing-app.png" alt="Drawing App" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/simple-draw-app/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Drawing App</h3>
+            <p>Web-based drawing application inspired by MS Paint, built from scratch with Canvas API.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Canvas API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <img src="img/connect4.png" alt="Connect 4" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/Connect-4-web-app" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Connect 4</h3>
+            <p>Two-player Connect 4 game with win detection and animated token drops.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <img src="img/digital-clock.png" alt="Digital Clock" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/digitalClock/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Digital Clock</h3>
+            <p>Real-time digital clock with stylish display built in vanilla JavaScript.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-img">
+            <img src="img/creditcard.png" alt="Credit Card Form" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://alfagonggong.github.io/simple-credit-card-not-responsive" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Credit Card Form</h3>
+            <p>Interactive credit card form with real-time animated card preview.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Let's Talk</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hello? My inbox is always open.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-panel" data-aos="fade-right">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:jasenkobozinovic@gmail.com">jasenkobozinovic@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+38761139970">+387 61 139 970</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <span>Sarajevo, Bosnia &amp; Herzegovina</span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/AlfaGongGong" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/Sinner211?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/alfa.gong.gong?igshid=ZDc4ODBmNjlmNQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <form
+            action="https://script.google.com/macros/s/AKfycbxBo0Dbqkic61lE-0rG3tWAi4ZkLCWdJHskPZvPXctFdScpCn-GdgyGqFgHDcCugbajtA/exec"
+            class="gform contact-form"
+            data-email="example@email.net"
+            method="POST">
+            <div class="form-elements">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="John Doe" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="john@example.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message here..." rows="6" required></textarea>
+              </div>
+              <button type="submit" id="form-submit">
+                Send Message <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <div class="thankyou_message" style="display: none">
+              <div class="thank-you-content">
+                <i class="fas fa-check-circle"></i>
+                <h4>Message sent!</h4>
+                <p>Thanks for reaching out. I'll get back to you shortly.</p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <article class="contact-form">
-      <h2> Contact </h2>
-      <form
-        action="https://script.google.com/macros/s/AKfycbxBo0Dbqkic61lE-0rG3tWAi4ZkLCWdJHskPZvPXctFdScpCn-GdgyGqFgHDcCugbajtA/exec"
-        class="gform pure-form pure-form-stacked contact-form" data-email="example@email.net" method="POST">
-        <p> Email me or use social media </p>
-        <div class="form-elements">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input id="name" name="name" placeholder="Type in your name" required type="text" autocomplete="on"
-              class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your message" rows="10" required type="text"
-              class="form-control"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="email"><em>Your Email Address:</em></label>
-            <input id="email" name="email" placeholder="your@email.com" required type="email" autocomplete="on"
-              class="form-control" />
-          </div>
-          <button class="btn btn-primary project-btn" id="form-submit">
-            <i class="fa fa-paper-plane"></i>&nbsp;Send
-          </button>
-        </div>
-        <div class="thankyou_message" style="display: none">
-          <h4>Thanks for contacting me. I will get back to you shortly. </h4>
-        </div>
-      </form>
-    </article>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="footer col-md-6">
-          <a class="soc-link" href="https://www.facebook.com/Sinner211?mibextid=ZbWKwL" id="fac">
-            <i class="fab fa-facebook m-3 socIcon"></i>
-          </a>
-          <a class="soc-link" href="https://instagram.com/alfa.gong.gong?igshid=ZDc4ODBmNjlmNQ==" id="inst">
-            <i class="fab fa-instagram  m-3 socIcon"></i>
-          </a>
-          <a class="soc-link" href="https://github.com/AlfaGongGong" id="git">
-            <i class="fab fa-github  m-3 socIcon"></i>
-          </a>
-          <a class="soc-link" href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/" id="lin">
-            <i class="fab fa-linkedin  m-3 socIcon"></i>
-          </a>
+      <div class="footer-content">
+        <div class="footer-logo">JB<span>.</span></div>
+        <p class="footer-tagline">Crafting digital experiences, one line at a time.</p>
+        <div class="footer-social">
+          <a href="https://github.com/AlfaGongGong" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/Sinner211?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/alfa.gong.gong?igshid=ZDc4ODBmNjlmNQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="copyright col-md-6 text-end">
-          <p>&copy; 2023 Designed by AlfaGongGong</p>
-        </div>
+        <p class="footer-copy">&copy; 2024 Jasenko Božinović. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <!-- Scroll to top -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <script src="js/form-submission-handler.js" type="text/javascript" defer></script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/sendGrid.js" defer></script>
+  <script src="js/form-submission-handler.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 

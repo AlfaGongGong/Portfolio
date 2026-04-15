@@ -1,103 +1,450 @@
+:root {
+  --sidebar-bg: linear-gradient(160deg, #6366f1 0%, #4f46e5 100%);
+  --accent: #6366f1;
+  --text-dark: #1a1a2e;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Comic Neue', Arial, sans-serif;
-    background-color: #333;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #ffffff;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-}
-
-li {
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-size: 18px;
+  font-family: var(--font-sans);
+  background: #f3f4f6;
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 18px;
+  text-decoration: none;
+  color: inherit;
 }
 
-a:hover {
-    text-decoration: none;
-    color: #0056b3;
-
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-#contact {
-    margin-bottom: 40px;
+/* ===========================
+   CV ACTIONS BAR
+=========================== */
+.cv-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-#skills {
-    margin-bottom: 40px;
+.cv-back,
+.cv-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+  border: none;
 }
 
-#portfolio {
-    margin-bottom: 40px;
+.cv-back {
+  color: var(--text-dark);
+  background: #f3f4f6;
+  text-decoration: none;
 }
 
-#education {
-    margin-bottom: 40px;
+.cv-back:hover {
+  background: #e5e7eb;
 }
 
-#languages {
-    margin-bottom: 40px;
+.cv-print {
+  background: var(--accent);
+  color: white;
 }
 
+.cv-print:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* ===========================
+   CV LAYOUT
+=========================== */
+.cv-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 960px;
+  margin: 32px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+.cv-sidebar {
+  background: var(--sidebar-bg);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: white;
+}
+
+.cv-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  margin: 0 auto;
+}
+
+.cv-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.cv-sidebar-name {
+  text-align: center;
+}
+
+.cv-sidebar-name h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.cv-sidebar-name p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+.cv-sidebar-section h3 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.cv-sidebar-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-sidebar-section ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cv-sidebar-section ul li i {
+  width: 14px;
+  text-align: center;
+  margin-top: 2px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.cv-sidebar-section ul li a {
+  color: rgba(255, 255, 255, 0.85);
+  word-break: break-word;
+  transition: color 0.2s;
+}
+
+.cv-sidebar-section ul li a:hover {
+  color: white;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skills-list span {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lang-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lang-list .level {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+.cv-main {
+  background: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cv-section h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.cv-section h2 i {
+  font-size: 0.85rem;
+}
+
+.cv-section > p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -21px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.timeline-content h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.timeline-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline-company {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.timeline-details {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-details li {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  padding-left: 14px;
+  position: relative;
+}
+
+.timeline-details li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ===========================
+   PROJECTS IN CV
+=========================== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cv-project {
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.cv-project h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-project h3 a {
+  color: var(--accent);
+  font-size: 0.75rem;
+  transition: opacity 0.2s;
+}
+
+.cv-project h3 a:hover {
+  opacity: 0.7;
+}
+
+.cv-project p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   PRINT STYLES
+=========================== */
+@media print {
+  .cv-actions {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .cv-wrapper {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .cv-sidebar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .timeline-details li,
+  .cv-section > p,
+  .timeline-company {
+    color: #374151 !important;
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
+  .cv-wrapper {
+    grid-template-columns: 1fr;
+    margin: 0;
+    border-radius: 0;
+  }
 
-    h1 {
-        font-size: 28px;
-    }
+  .cv-actions {
+    padding: 12px 16px;
+  }
 
-    h2 {
-        font-size: 20px;
-    }
+  .cv-main {
+    padding: 24px 20px;
+  }
 
-    h3 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 16px;
-    }
+  .timeline-header {
+    flex-direction: column;
+    gap: 4px;
+  }
 }

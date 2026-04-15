@@ -4,122 +4,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jasenko Božinović CV</title>
+  <title>Jasenko Božinović — Resume</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     referrerpolicy="no-referrer" crossorigin="anonymous" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,700;1,300;1,400;1,700&family=Merienda:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="cv.css" />
 </head>
 
-<body id="top">
+<body>
 
-  <div class="container px-5 pt-3">
-    <h1 id="name" class="text-center">Jasenko Božinović</h1>
-    <h2 class="text-center">Front-end Developer</h2>
-
-    <section id="contact">
-      <h2 class="text-center">Contact</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <ul class="contact-info">
-            <li><i class="fa-solid fa-phone"></i> +38761139970</li>
-            <li><a href="mailto:jasenkobozinovic@gmail.com"><i class="fa-brands fa-google"></i>
-                jasenkobozinovic@gmail.com</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/AlfaGongGong">github.com/jasenkobozinovic</a>
-            </li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/">
-                linkedin.com/in/jasenkobozinovic</a> </li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <ul class="contact-info">
-            <li>Nationality: Bosnian</li>
-            <li>Date of Birth: 14.04.1982</li>
-            <li>Gender: Male</li>
-            <li>
-              Address: 71000, Sarajevo, Bosnia and Herzegovina, Nikole Kašikovića 9
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div id="profile">
-      <h3>Professional Summary:</h3>
-      <p>A versatile professional with a 20-year tenure in healthcare, I have recently transitioned to front-end
-        development. My career pivot is driven by a passion for technology and innovation. I am committed to leveraging
-        my
-        diverse skill set to contribute to cutting-edge software solutions.</p>
-    </div>
-
-    <div id="experience">
-      <h3>Professional Experience:</h3>
-      <ul>
-        <li>Klinički centar Univerziteta Sarajevo - Physiotherapist | 2002 – Present</li>
-        <li>IT Academy Sarajevo - Front-end Development Student | 2022 – Present</li>
-      </ul>
-    </div>
-
-    <div id="skills">
-      <h3>Technical Skills:</h3>
-      <ul>
-        <li>Frontend Technologies: HTML5, CSS3, JavaScript, React, Bootstrap, SASS/SCSS.</li>
-        <li>Backend Familiarity: Node.js, REST API, SQL, MySQL.</li>
-        <li>Tools: Proficient in Git, experienced with Slack and other collaborative platforms.</li>
-      </ul>
-    </div>
-
-    <div id="portfolio">
-      <h3>Projects:</h3>
-      <ul>
-        <li>Weather App: Developed a responsive application providing real-time weather updates.</li>
-        <li>Movie App: Created an interactive web application for browsing and reviewing movies.</li>
-        <li>Portfolio Website: Designed and deployed a personal portfolio website showcasing my projects.</li>
-        <li>Swimming Club 'Swim': Engineered a website for a local swimming club, enhancing their online presence.</li>
-      </ul>
-    </div>
-
-    <div id="education">
-      <h3>Education:</h3>
-      <ul>
-        <li>Bachelor of Science in Physiotherapy - Faculty of Health Sciences, University of Sarajevo | 2006</li>
-        <li>Frontend Development Program - IT Academy Sarajevo | 2022 – Present</li>
-      </ul>
-    </div>
-
-    <div id="languages">
-      <h3>Languages:</h3>
-      <ul>
-        <li>Bosnian: Native proficiency</li>
-        <li>English: Full professional proficiency</li>
-      </ul>
-    </div>
+  <div class="cv-actions">
+    <a href="index.html" class="cv-back">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="cv-print">
+      <i class="fas fa-print"></i> Print / Save PDF
+    </button>
   </div>
 
+  <div class="cv-wrapper">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
-  <script src="script.js" defer></script>
+    <!-- Sidebar -->
+    <aside class="cv-sidebar">
+      <div class="cv-photo">
+        <img src="img/profilna.jpg" alt="Jasenko Božinović" />
+      </div>
+      <div class="cv-sidebar-name">
+        <h1>Jasenko</h1>
+        <h1>Božinović</h1>
+        <p>Frontend Developer</p>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+38761139970">+387 61 139 970</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:jasenkobozinovic@gmail.com">jasenkobozinovic@gmail.com</a>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sarajevo, B&amp;H</span>
+          </li>
+          <li>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/AlfaGongGong" target="_blank" rel="noopener noreferrer">github.com/AlfaGongGong</a>
+          </li>
+          <li>
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/jasenko-bozinovic-9032b6175/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Technical Skills</h3>
+        <div class="skills-list">
+          <span>HTML5</span>
+          <span>CSS3 / SCSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <span>Bootstrap</span>
+          <span>Git</span>
+          <span>SQL / MySQL</span>
+          <span>REST APIs</span>
+          <span>Figma</span>
+          <span>Responsive Design</span>
+        </div>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Languages</h3>
+        <ul class="lang-list">
+          <li>
+            <span>Bosnian</span>
+            <span class="level">Native</span>
+          </li>
+          <li>
+            <span>English</span>
+            <span class="level">Fluent</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Personal</h3>
+        <ul>
+          <li>
+            <i class="fas fa-birthday-cake"></i>
+            <span>14 April 1982</span>
+          </li>
+          <li>
+            <i class="fas fa-flag"></i>
+            <span>Bosnian</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="cv-main">
+
+      <section class="cv-section">
+        <h2><i class="fas fa-user"></i> Professional Summary</h2>
+        <p>
+          Versatile Frontend Developer with hands-on experience building responsive, user-centric web applications. Transitioning from a 22-year career in healthcare, I bring exceptional attention to detail, strong communication, and proven ability to perform under pressure. Passionate about clean code, modern UI, and creating meaningful digital experiences.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Frontend Development Student / Intern</h3>
+                <span class="timeline-date">2022 – Present</span>
+              </div>
+              <div class="timeline-company">IT Academy Sarajevo</div>
+              <ul class="timeline-details">
+                <li>Built 10+ real-world projects using HTML, CSS, JavaScript, React, and Node.js</li>
+                <li>Collaborated in a team React project (Linker) using modern development workflows</li>
+                <li>Developed and deployed live websites for real clients (Swimming Club Swim)</li>
+                <li>Practiced agile methodology, code reviews, and version control with Git</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Physiotherapist</h3>
+                <span class="timeline-date">2002 – Present</span>
+              </div>
+              <div class="timeline-company">Klinički centar Univerziteta Sarajevo</div>
+              <ul class="timeline-details">
+                <li>22 years of patient-focused healthcare in a high-pressure hospital environment</li>
+                <li>Developed strong communication, empathy, and precise problem-solving skills</li>
+                <li>Consistently delivered detail-oriented work under strict protocols</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Frontend Development Program</h3>
+                <span class="timeline-date">2022 – Present</span>
+              </div>
+              <div class="timeline-company">IT Academy Sarajevo</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Bachelor of Science in Physiotherapy</h3>
+                <span class="timeline-date">2006</span>
+              </div>
+              <div class="timeline-company">Faculty of Health Sciences, University of Sarajevo</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2><i class="fas fa-code"></i> Featured Projects</h2>
+        <div class="projects-list">
+          <div class="cv-project">
+            <h3>
+              Swimming Club "Swim"
+              <a href="https://sportskiklubswim.ba/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h3>
+            <p>Live production website for a local swimming club. Built with HTML, SCSS, and JavaScript.</p>
+          </div>
+          <div class="cv-project">
+            <h3>
+              Linker — React App
+              <a href="https://development--ita-linker.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h3>
+            <p>Collaborative React project built during IT Academy Sarajevo internship with a team of developers.</p>
+          </div>
+          <div class="cv-project">
+            <h3>
+              Black Flag — Game Webstore
+              <a href="https://alfagonggong.github.io/Black-Flag" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h3>
+            <p>E-commerce style game store with responsive design and interactive UI elements.</p>
+          </div>
+          <div class="cv-project">
+            <h3>
+              3D Solar System
+              <a href="https://alfagonggong.github.io/solar-system/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h3>
+            <p>Interactive 3D solar system simulation using pure CSS animations and vanilla JavaScript.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
 </body>
 
 </html>
